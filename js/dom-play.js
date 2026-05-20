@@ -14,7 +14,7 @@
 
 */
 
-const spnas = document.querySelectorAll("#play span");
+const spans = document.querySelectorAll("#play span");
 
 console.log(spans);
 
