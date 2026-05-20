@@ -17,3 +17,7 @@
 const spnas = document.querySelectorAll("#play span");
 
 console.log(spans);
+
+for(const mySpan of spans){
+   mySpan.style.backgroundColor = "yellow";
+}
