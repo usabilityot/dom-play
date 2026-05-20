@@ -13,3 +13,7 @@
 
 
 */
+
+const spnas = document.querySelectorAll("#play span");
+
+console.log(spans);
