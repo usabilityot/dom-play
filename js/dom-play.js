@@ -14,12 +14,27 @@
 
 */
 
-const spans = document.querySelectorAll("#play span");
+// 1. Grab all the clickable actor names, and all the dialogue lines
+const actorNames = document.querySelectorAll("#play .actor-name");
+const allDialogues = document.querySelectorAll("#play .dialogue");
 
-console.log(spans);
-
-for(const mySpan of spans){
-   mySpan.style.backgroundColor = "yellow";
-   let actor = mySpan.dataset.actor;
-   alert(actor);
+// 2. Loop through all the names to attach the click listener
+for (const nameSpan of actorNames) {
+    
+    nameSpan.addEventListener("click", function() {
+        // 'this' refers to the specific name span that was just clicked
+        let clickedActor = this.dataset.actor; 
+        
+        // 3. Now, loop through ALL dialogue lines to highlight or reset them
+        for (const dialogueSpan of allDialogues) {
+            
+            if (dialogueSpan.dataset.actor === clickedActor) {
+                // If it matches the clicked actor, highlight it
+                dialogueSpan.style.backgroundColor = "yellow";
+            } else {
+                // If it belongs to anyone else, reset it to normal
+                dialogueSpan.style.backgroundColor = "transparent";
+            }
+        }
+    });
 }
